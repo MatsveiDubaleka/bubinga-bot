@@ -6,7 +6,7 @@ import Langs from '../../assets/langs/main';
 import { LangsType } from '../../types';
 import useAnalyticsEventTracker from '../../hooks/useAnalyticsEventTracker';
 import ReactGA from 'react-ga4';
-const TRACKING_ID = 'G-8ZR09W99SF';
+const TRACKING_ID = 'G-VVPSS0LPQ6';
 
 ReactGA.initialize(TRACKING_ID);
 export default function App() {
@@ -112,7 +112,7 @@ export default function App() {
   };
 
   return (
-    <div className='relative flex flex-col items-center justify-between w-full h-full text-white bg-cover bg-[#0E0F12]'>
+    <div className='relative flex flex-col items-center justify-between w-full h-full text-white bg-cover bg-[#001B38]'>
       <div className='w-full flex flex-col items-center justify-center gap-5'>
         <h1 className='w-full py-3 font-semibold text-[17px] text-center'>
           Bubinga
@@ -120,10 +120,11 @@ export default function App() {
         {step === 1 && (
           <div className='mt-2 relative w-full h-full flex flex-col items-center justify-center max-w-[320px] text-center gap-2'>
             <h2 className='font-bold text-center text-2xl mx-[25px] z-20'>
-              Profitability on the rise
+              Profitable investment platform
             </h2>
             <p className='text-[#C0C1C5] z-20 text-center'>
-              Register and get $10,000 on a demo account for learning to trade
+              Register now and get USD 10,000on your demo account for free!
+              Welcomebonus on your first deposit up to USD 2,000.
             </p>
           </div>
         )}
@@ -135,11 +136,23 @@ export default function App() {
             <p className='text-[#C0C1C5]'>{Langs['en'].join_quotex}</p>
           </div>
         )}
+        {step === 3 && (
+          <div className='mt-2 relative w-full h-full flex flex-col items-center justify-center max-w-[350px] text-center gap-2'>
+            <h2 className='font-bold text-2xl z-[30] text-wrap mx-5'>
+              Get 100% bonus on your first deposit!
+            </h2>
+            <p className='text-[#C0C1C5]'>
+              Bubinga always supports your determination with a special bonus on
+              your first deposit. Get 100% bonus on your first deposit over USD
+              50 following 3 simple steps.
+            </p>
+          </div>
+        )}
       </div>
 
       {step === 0 && (
         <div className='mt-[-10vh] flex items-center justify-center h-full w-full'>
-          <img src='/logo.svg' alt='logotype' width={194} height={24} />
+          <img src='/logo.svg' alt='logotype' width={189} height={55} />
         </div>
       )}
 
@@ -155,12 +168,19 @@ export default function App() {
       )}
 
       {step === 2 && (
-        <div className='w-full h-full flex flex-col items-center justify-center text-center gap-10'>
+        <div className='relative w-full h-full flex flex-col items-center justify-center text-center gap-10'>
           <img
             src={`/images/png/en/2.png`}
             alt='Second'
             width={312}
             height={192}
+          />
+          <img
+            src={`/images/png/en/2-more.png`}
+            alt='Second More'
+            width={291}
+            height={136}
+            className='absolute'
           />
         </div>
       )}
@@ -176,7 +196,13 @@ export default function App() {
       )}
 
       {step > 0 && (
-        <div className='flex flex-col items-center justify-center w-full z-10 pb-5'>
+        <div
+          className='fixed bottom-0 flex flex-col items-center justify-center w-full z-10 pb-5'
+          style={{
+            background:
+              'linear-gradient(0deg, #001B38 0%, #001B38 85.55%, rgba(0, 27, 56, 0) 96.71%)',
+          }}
+        >
           <StepBar active={step} />
           <Button title={Langs[lang].continue} onClick={handleBtnClick} />
         </div>

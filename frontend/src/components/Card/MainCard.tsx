@@ -8,7 +8,7 @@ interface ICard {
 export default function Card({ title, subtitle, index }: ICard) {
   return (
     <div className='flex flex-row items-center justify-start gap-[22px]'>
-      <div className='m-auto flex items-center justify-center w-[51px] h-[51px] p-6 rounded-full bg-[#353A4C] font-bold text-[17px] leading-[20.4px]'>
+      <div className='m-auto flex items-center justify-center w-[51px] h-[51px] p-6 rounded-full bg-[#00BAF5] font-bold text-[17px] leading-[20.4px]'>
         {index}
       </div>
       {/* <img src={imageSrc} alt={`${title} Card`} width={95} height={95} /> */}
